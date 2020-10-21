@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   umeng_analytics_plugin: ^1.0.3
+  flutter_bugly: ^0.2.8
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bugly/flutter_bugly.dart';
 import 'package:stl_flutter_app/router.dart';
 import 'package:stl_flutter_app/software_application.dart';
 import 'package:umeng_analytics_plugin/umeng_analytics_plugin.dart';
@@ -49,6 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      FlutterBugly.setAppChannel("androidsss"); //安卓专用
+      FlutterBugly.putUserData(key: "hhhhhhhh", value: "hello");
+      // FlutterBugly.uploadException(
+      // message: "傻子", detail: null); // bugly触发ios端崩溃
+
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
       // so that the display can reflect the updated values. If we changed

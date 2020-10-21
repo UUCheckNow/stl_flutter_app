@@ -1,3 +1,4 @@
+import 'package:flutter_bugly/flutter_bugly.dart';
 import 'package:umeng_analytics_plugin/umeng_analytics_plugin.dart';
 import 'dart:async';
 
@@ -12,6 +13,14 @@ class SoftwareApplication {
 
   void onCreate() {
     initUmengAnalyticsPlugin();
+    initBuglyPlugin();
+  }
+
+  Future<void> initBuglyPlugin() async {
+    FlutterBugly.init(androidAppId: "83857508ff", iOSAppId: "cd52ffc48e")
+        .then((value) {
+      print("Bugly_Log  => ${value.message}");
+    });
   }
 
   Future<void> initUmengAnalyticsPlugin() async {
@@ -20,7 +29,7 @@ class SoftwareApplication {
       iosKey: '5f87ec9594846f78a97352a3',
       logEnabled: true,
     );
-    String res = result ? 'OK' : 'ERROR';
-    print('Umeng initialized  => $res');
+    String res = result ? 'Umeng 初始化成功' : 'Umeng initialized ERROR';
+    print('Umeng_Log  => $res');
   }
 }
