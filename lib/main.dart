@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bugly/flutter_bugly.dart';
-import 'package:stl_flutter_app/router.dart';
-import 'package:stl_flutter_app/software_application.dart';
+import 'package:stl_flutter_app/base_router/router.dart';
+import 'package:stl_flutter_app/manager/software_application.dart';
 import 'package:umeng_analytics_plugin/umeng_analytics_plugin.dart';
 
-import 'app_analysis.dart';
+import 'base_router/app_analysis.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -86,7 +86,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             onPressed: () {
               UmengAnalyticsPlugin.event('clickSearch', label: "clickLabel");
-              Navigator.of(context).pushNamed("/detailPage");
+              Navigator.of(context)
+                  .pushNamed(RouteNames.VERIFICATIONCODELOGINPAGE);
             },
           )
         ],

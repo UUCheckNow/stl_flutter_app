@@ -12,8 +12,8 @@ class SoftwareApplication {
   }
 
   void onCreate() {
-    initUmengAnalyticsPlugin();
-    initBuglyPlugin();
+    // initUmengAnalyticsPlugin();
+    // initBuglyPlugin();
   }
 
   Future<void> initBuglyPlugin() async {
